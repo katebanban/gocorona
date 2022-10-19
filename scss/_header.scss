@@ -1,0 +1,192 @@
+.header {
+	position: fixed; // НЕ ставить здесь absolute, потому что он не прячет меню
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50; // на глаз берём значение побольше, чтоб шапка всегда была над любым контентом на странице
+	// background: #fafbfd;
+	background: #fafbfdb7;
+	box-shadow: 0px 1px 3px #fafbfdb7;
+
+	&__body {
+		display: flex;
+		min-height: 114px;
+		align-items: center;
+
+		@media (max-width: 1000px) {
+			min-height: 80px;
+		}
+	}
+
+	&__logo {
+		transition: all 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		@media (max-width: 1000px) {
+			order: 1;
+			position: relative;
+			z-index: 5;
+		}
+	}
+
+	&__menu {
+		margin-left: auto;
+
+		@media (max-width: 1000px) {
+			margin-left: unset;
+			order: 3;
+		}
+	}
+
+	&__button {
+		margin-left: 160px;
+
+		@media (max-width: 1000px) {
+			order: 2;
+			margin-left: auto;
+			margin-right: 15px;
+			position: relative;
+			z-index: 5;
+		}
+
+		@media (max-width: 480px) {
+			padding: 12px 14px;
+		}
+	}
+}
+
+.menu {
+	display: flex;
+	justify-content: flex-end;
+
+	&__list {
+		display: flex;
+		text-transform: uppercase;
+
+		@media (max-width: 1000px) {
+			position: absolute; // достаём меню из основного потока
+			top: 0;
+			right: -100%; // прячем меню за пределами экрана
+			width: 100%;
+			height: 100vh; // меню будет занимать всю высоту экрана, каким бы он ни был
+			flex-direction: column;
+			align-items: center;
+			padding: 110px 0px 30px;
+			overflow: auto; // чтобы появился скролл если больше элементов меню
+			background: #fafbfdc4;
+			backdrop-filter: blur(5px); // чтобы заблюрить фон
+			transition: all 0.3s;
+		}
+	}
+
+	&__item {
+		& + * {
+			margin-left: 40px;
+
+			@media (max-width: 1000px) {
+				margin-left: unset;
+				margin-top: 15px;
+			}
+		}
+	}
+
+	&__link {
+		font-family: "Raleway", sans-serif;
+		font-weight: 700;
+		font-size: 10px;
+		line-height: 12px / 10px * 100%;
+		letter-spacing: 0.14em;
+		color: #000;
+		transition: all 0.3s;
+
+		&:hover {
+			color: #ec5863;
+		}
+
+		@media (max-width: 1000px) {
+			font-size: 18px;
+
+			&:hover {
+				color: #ec5863;
+			}
+		}
+	}
+
+	&__checkbox {
+		display: none; // убираем чек-бокс
+
+		@media (max-width: 1000px) {
+			&:checked ~ .menu__list {
+				right: 0;
+			}
+			&:checked ~ .menu__label {
+				// делаем крестик
+				span {
+					opacity: 0; // прячу среднюю полоску
+					transition: all 0.3s;
+				}
+				&::before {
+					top: 50%;
+					transform: translateY(-50%);
+					transform: rotate(45deg);
+					transition: all 0.3s;
+				}
+				&::after {
+					top: 50%;
+					bottom: unset;
+					transform: translateY(-50%);
+					transform: rotate(-45deg);
+					transition: all 0.3s;
+				}
+			}
+		}
+	}
+
+	&__label {
+		// делаем кнопку бургер
+		cursor: pointer;
+		display: none;
+		width: 40px;
+		height: 25px;
+		position: relative;
+
+		@media (max-width: 1000px) {
+			display: block;
+			z-index: 5;
+		}
+
+		@media (max-width: 480px) {
+			width: 30px;
+		}
+
+		span {
+			display: block;
+			width: 100%;
+			height: 3px;
+			background: #4285f4;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: all 0.3s;
+		}
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 3px;
+			background: #4285f4;
+			position: absolute;
+			transition: all 0.3s;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+	}
+}

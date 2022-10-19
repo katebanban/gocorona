@@ -1,0 +1,91 @@
+body {
+	font-family: "Rubik", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 138.5%;
+	letter-spacing: 0.08em;
+	color: #616161;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: 1057px + 30px;
+	margin: 0 auto;
+	padding: 0px 15px; // "отступы безопасности"
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.button {
+	display: inline-block; //потому что ссылка строчная по умолчанию
+	font-family: "Raleway", sans-serif;
+	font-weight: 800;
+	font-size: 10px;
+	line-height: 12px / 10px * 100%;
+	letter-spacing: 0.14em;
+	color: #fcfdfe;
+	background: #ec5863;
+	border-radius: 5px;
+	padding: 14px 30px;
+	text-transform: uppercase;
+	transition: all 0.3s;
+
+	&:hover {
+		background: #eb414d;
+	}
+
+	&--blue {
+		background: #4285f4;
+		transition: all 0.3s;
+
+		&:hover {
+			background: #1460db;
+		}
+	}
+}
+
+.blue-color {
+	color: #4285f4;
+}
+
+.red-color {
+	color: #ec5863;
+}
+
+.info {
+	&__title {
+		font-weight: 700;
+		font-size: 44px;
+		line-height: 126%;
+		color: #000;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		@media (max-width: 480px) {
+			font-size: 34px;
+		}
+	}
+
+	&__text {
+		max-width: 363px;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__button {
+		align-self: flex-start; //чтобы кнопка не расширялась на всю ширину блока из-за флекса
+	}
+}
