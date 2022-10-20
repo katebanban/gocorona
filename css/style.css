@@ -389,142 +389,6 @@ body {
   bottom: 0;
 }
 
-.header-max {
-  padding: 25px;
-  background: crimson;
-  position: relative;
-}
-.header-max__body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width: 1000px) {
-  .header-max__body {
-    justify-content: start;
-  }
-}
-.header-max__logo {
-  font-size: 40px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #fff;
-}
-@media (max-width: 1000px) {
-  .header-max__logo {
-    order: 1;
-  }
-}
-@media (max-width: 1000px) {
-  .header-max__menu {
-    order: 3;
-  }
-}
-@media (max-width: 1000px) {
-  .header-max__btn {
-    order: 2;
-    margin-left: auto;
-  }
-}
-
-.menu-max__list {
-  display: flex;
-}
-@media (max-width: 1000px) {
-  .menu-max__list {
-    position: absolute;
-    top: 75px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 75px);
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    overflow: auto;
-    background: rgb(105, 105, 105);
-    transition: all 0.3s;
-  }
-}
-.menu-max__item + * {
-  margin-left: 15px;
-}
-@media (max-width: 1000px) {
-  .menu-max__item + * {
-    margin-left: unset;
-    margin-top: 15px;
-  }
-}
-.menu-max__link {
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #fff;
-  line-height: 1;
-}
-
-.menu-btn__checkbox {
-  display: none;
-}
-@media (max-width: 1000px) {
-  .menu-btn__checkbox:checked ~ .menu-max__list {
-    right: 0;
-  }
-  .menu-btn__checkbox:checked ~ .menu-btn__label span {
-    opacity: 0;
-    transition: all 0.3s;
-  }
-  .menu-btn__checkbox:checked ~ .menu-btn__label::before {
-    top: 50%;
-    transform: translateY(-50%);
-    transform: rotate(45deg);
-    transition: all 0.3s;
-  }
-  .menu-btn__checkbox:checked ~ .menu-btn__label::after {
-    top: 50%;
-    bottom: unset;
-    transform: translateY(-50%);
-    transform: rotate(-45deg);
-    transition: all 0.3s;
-  }
-}
-.menu-btn__label {
-  cursor: pointer;
-  display: none;
-  width: 40px;
-  height: 25px;
-  position: relative;
-}
-@media (max-width: 1000px) {
-  .menu-btn__label {
-    display: block;
-  }
-}
-.menu-btn__label span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s;
-}
-.menu-btn__label::before, .menu-btn__label::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  position: absolute;
-  transition: all 0.3s;
-}
-.menu-btn__label::before {
-  top: 0;
-}
-.menu-btn__label::after {
-  bottom: 0;
-}
-
 .first {
   background: #fafbfd;
 }
@@ -722,4 +586,83 @@ body {
   .stay-safe__info {
     flex: 0 1 100%;
   }
+}
+
+.experts {
+  background: #fafbfd;
+  padding: 53px 0px 116px;
+}
+.experts__body {
+  padding-left: 48px;
+}
+.experts__statistics {
+  margin: 0px 130px 46px 118px;
+  padding: 51px 76px 33px 31px;
+}
+.experts__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.experts__info:not(:last-child) {
+  margin-right: 15px;
+}
+.experts__video {
+  position: relative;
+}
+.experts__video a {
+  display: inline-block;
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.experts__video a svg circle {
+  transition: all 0.3s;
+}
+.experts__video a:hover svg circle {
+  fill: #1460db;
+}
+.experts__video-poster {
+  box-shadow: 0px 4px 18px rgba(88, 126, 236, 0.18);
+  border-radius: 8px;
+}
+.experts__video-poster img {
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.experts--statistics {
+  background: url("../img/experts/experts_bg.png") center/contain no-repeat;
+}
+.experts--statistics__list {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0px 2px 24px rgba(88, 126, 236, 0.15);
+  border-radius: 16px;
+  padding: 28px 80px;
+  font-weight: 700;
+  text-align: center;
+}
+.experts--statistics__item + * {
+  margin-left: 15px;
+}
+.experts--statistics__value {
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0.14em;
+  color: #ec5863;
+}
+.experts--statistics__value:not(:last-child) {
+  margin-bottom: 5px;
+}
+.experts--statistics__text {
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.37em;
+  text-transform: uppercase;
+  color: #000;
 }
