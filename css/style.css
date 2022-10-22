@@ -550,6 +550,7 @@ body {
   .stay-safe__image {
     flex: 0 1 60%;
     margin-top: 30px;
+    margin-right: unset;
   }
 }
 @media (max-width: 480px) {
@@ -592,20 +593,60 @@ body {
   background: #fafbfd;
   padding: 53px 0px 116px;
 }
+@media (max-width: 480px) {
+  .experts {
+    padding: 0px 0px 30px 0px;
+  }
+}
 .experts__body {
   padding-left: 48px;
+}
+@media (max-width: 1000px) {
+  .experts__body {
+    padding-left: unset;
+  }
 }
 .experts__statistics {
   margin: 0px 130px 46px 118px;
   padding: 51px 76px 33px 31px;
+}
+@media (max-width: 1000px) {
+  .experts__statistics {
+    margin: 0px 50px 46px;
+  }
+}
+@media (max-width: 768px) {
+  .experts__statistics {
+    margin: 0px 0px 25px 0px;
+    padding-right: 31px;
+  }
 }
 .experts__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .experts__content {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
 .experts__info:not(:last-child) {
   margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .experts__info:not(:last-child) {
+    margin-right: unset;
+  }
+}
+@media (max-width: 768px) {
+  .experts__info {
+    flex: 0 1 100%;
+  }
+  .experts__info:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 .experts__video {
   position: relative;
@@ -647,8 +688,35 @@ body {
   font-weight: 700;
   text-align: center;
 }
+@media (max-width: 1000px) {
+  .experts--statistics__list {
+    padding: 25px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .experts--statistics__list {
+    padding: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .experts--statistics__list {
+    flex-direction: column;
+  }
+}
 .experts--statistics__item + * {
   margin-left: 15px;
+}
+@media (max-width: 480px) {
+  .experts--statistics__item + * {
+    margin-left: unset;
+  }
+}
+@media (max-width: 480px) {
+  .experts--statistics__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 .experts--statistics__value {
   font-size: 36px;
@@ -659,10 +727,26 @@ body {
 .experts--statistics__value:not(:last-child) {
   margin-bottom: 5px;
 }
+@media (max-width: 768px) {
+  .experts--statistics__value:not(:last-child) {
+    margin-bottom: unset;
+  }
+}
+@media (max-width: 768px) {
+  .experts--statistics__value {
+    font-size: 33px;
+    letter-spacing: 0.1em;
+  }
+}
 .experts--statistics__text {
   font-size: 11px;
   line-height: 13px;
   letter-spacing: 0.37em;
   text-transform: uppercase;
   color: #000;
+}
+@media (max-width: 768px) {
+  .experts--statistics__text {
+    letter-spacing: 0.3em;
+  }
 }
