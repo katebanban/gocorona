@@ -1,6 +1,14 @@
 .healthcare {
 	padding-top: 80px;
 
+	@media (max-width: 768px) {
+		padding-top: 50px;
+	}
+
+	@media (max-width: 480px) {
+		padding-top: 30px;
+	}
+
 	&__body {
 		display: flex;
 		flex-direction: column;
@@ -11,6 +19,10 @@
 
 		&:not(:last-child) {
 			margin-bottom: 15px;
+
+			@media (max-width: 768px) {
+				margin-bottom: unset;
+			}
 		}
 	}
 
@@ -23,6 +35,10 @@
 		&:not(:last-child) {
 			margin-bottom: 14px;
 		}
+
+		@media (max-width: 480px) {
+			font-size: 34px;
+		}
 	}
 
 	&__text {
@@ -33,10 +49,19 @@
 	&__list-box {
 		padding: 45px 40px;
 		background: url("../img/healthcare/healthcare_bg.png") center / contain no-repeat;
+
+		@media (max-width: 480px) {
+			padding: 25px 15px;
+		}
 	}
 
 	&__list {
 		display: flex;
+
+		@media (max-width: 1000px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 
 	&__item {
@@ -53,11 +78,31 @@
 
 		&:not(:last-child) {
 			margin-right: 72px;
+
+			@media (max-width: 1000px) {
+				margin-right: unset;
+				margin-bottom: 20px;
+			}
 		}
 
-		&:hover {
-			transform: scale(1.1);
-			box-shadow: 0px 4px 18px #ec5863;
+		@media (max-width: 1000px) {
+			flex: 0 1 48%;
+
+			& + * {
+				margin-left: 20px;
+
+				@media (max-width: 768px) {
+					margin-left: unset;
+				}
+			}
+
+			&:last-child {
+				margin-left: unset;
+			}
+		}
+
+		@media (max-width: 768px) {
+			flex: 0 1 100%;
 		}
 	}
 }

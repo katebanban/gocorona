@@ -1,0 +1,30 @@
+.footer {
+	padding: 35px 0px 47px;
+
+	@media (max-width: 768px) {
+		padding: 15px 0px;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__link {
+		opacity: 0.8;
+		transition: all 0.3s;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:not(:last-child) {
+			margin-right: 57px;
+
+			@media (max-width: 480px) {
+				margin-right: 10px;
+			}
+		}
+	}
+}

@@ -66,6 +66,7 @@
 
 		@media (max-width: 768px) {
 			flex: 0 1 100%;
+			text-align: center;
 		}
 	}
 
@@ -89,6 +90,10 @@
 		&:hover {
 			transform: scale(1.1);
 		}
+
+		@media (max-width: 768px) {
+			align-self: center;
+		}
 	}
 }
 
@@ -111,6 +116,10 @@
 		&:not(:last-child) {
 			margin-bottom: 5px;
 		}
+
+		@media (max-width: 768px) {
+			font-size: 1rem;
+		}
 	}
 
 	&__text {
@@ -119,5 +128,9 @@
 		letter-spacing: 0.165em;
 		text-transform: uppercase;
 		color: #000;
+
+		@media (max-width: 768px) {
+			font-size: 1rem;
+		}
 	}
 }

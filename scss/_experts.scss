@@ -2,8 +2,12 @@
 	background: #fafbfd;
 	padding: 53px 0px 116px;
 
+	@media (max-width: 768px) {
+		padding: 50px 0px;
+	}
+
 	@media (max-width: 480px) {
-		padding: 0px 0px 30px 0px;
+		padding: 30px 0px;
 	}
 
 	&__body {
@@ -25,6 +29,10 @@
 		@media (max-width: 768px) {
 			margin: 0px 0px 25px 0px;
 			padding-right: 31px;
+		}
+
+		@media (max-width: 480px) {
+			padding: 0px 31px;
 		}
 	}
 
@@ -50,6 +58,7 @@
 
 		@media (max-width: 768px) {
 			flex: 0 1 100%;
+			text-align: center;
 
 			&:not(:last-child) {
 				margin-bottom: 30px;
@@ -76,6 +85,11 @@
 				svg circle {
 					fill: #1460db;
 				}
+			}
+
+			@media (max-width: 1000px) {
+				width: 50px;
+				height: 50px;
 			}
 		}
 	}
